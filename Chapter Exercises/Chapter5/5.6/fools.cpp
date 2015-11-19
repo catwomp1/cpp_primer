@@ -1,4 +1,4 @@
-// fools.cpp -- Monthly sales for "C++ for Fools" book - Exercise 5.5
+// fools.cpp -- Monthly sales for "C++ for Fools" book 
 #include <iostream>
 
 const char * months[12] =
