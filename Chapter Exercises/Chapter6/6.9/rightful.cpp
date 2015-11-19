@@ -1,8 +1,8 @@
 // rightful.cpp -- Keep track of monetary contributions to the Society for the
 //                 Preservation of Rightful Influence.
 #include <iostream>
-#include <fstream>
-#include <string>
+#include <fstream>   // File I/O support
+#include <string>    // Support for exit()
 #include <cstdlib>
 
 struct contributors
@@ -11,37 +11,36 @@ struct contributors
 		   double amount;
 };
 const int SIZE = 60;
-void showGrandPatrons(contributors * ps);
-void showPatrons(contributors * ps);
-int numContributors = 0;
+void showGrandPatrons(contributors * ps);  // Function prototype
+void showPatrons(contributors * ps);  // Function prototype
+unsigned numContributors = 0;
 int main(int argc, char* argv[])
 {
 	using namespace std;
-	ifstream inFile;
+	ifstream inFile;  // Create ifstream object
 	char filename[SIZE];
 	cout << "Enter name of data file: ";
 	cin.getline(filename, SIZE);
-	inFile.open(filename);
-	if (!inFile.is_open())
+	inFile.open(filename); // Open file
+	if (!inFile.is_open()) // If file is in read status
 		{
 			cout << "Cound not open the file " << filename << endl;
 			cout << "Program termination.\n";
-			exit(EXIT_FAILURE);
+			exit(EXIT_FAILURE); // Terminate
 		}
 	
 	inFile >> numContributors; // Read in number of contributors
+	inFile.get();
 	contributors * ps = new contributors[numContributors];
-	//cin.get();
+
 	while (inFile.good())
 	{
 		for (int i = 0; i < numContributors; i++)
 	  {
-		  //cout << "Enter contributor name: ";
-		  inFile >> ps[i].name;
-		  //cout << "Enter contribution amount: ";
-      inFile >> ps[i].amount;
-      //cin.get();
-	  }
+		  getline(inFile, ps[i].name);     // Read contributor name
+		  inFile >> ps[i].amount;          // Read contribution amount
+		  inFile.get();   
+    }
   }
   
   if (inFile.eof())
@@ -53,12 +52,14 @@ int main(int argc, char* argv[])
   
 	showGrandPatrons(ps);
 	showPatrons(ps);
+	
+	inFile.close(); // Close file
 	return 0;
 }
 
 void showGrandPatrons(contributors * ps)
 {
-	int total = 0;
+	unsigned total = 0;
 	std::cout << "**Grand Patrons**" << std::endl;
 	for (int i = 0; i < numContributors; i++)
 	{
@@ -70,14 +71,12 @@ void showGrandPatrons(contributors * ps)
 			}				
 	}
 	  if (total == 0)
-	  	{
-	  		std::cout << "none" << std::endl;
-	  	}
+	  	std::cout << "none" << std::endl;	  
 }
 
 void showPatrons(contributors * ps)
 {
-	int total = 0;
+	unsigned total = 0;
   std::cout << "**Patrons**" << std::endl;
 	for (int i = 0; i < numContributors; i++)
 	{
@@ -89,7 +88,5 @@ void showPatrons(contributors * ps)
 			}
 	}
 	  if (total == 0)
-	  	{
-	  		std::cout << "none" << std::endl;
-	    }
+	  	std::cout << "none" << std::endl;	    
 }			
