@@ -5,6 +5,21 @@
 **Chapter 2**
 
 **Chapter 3**
+- Exercises 3.1
+  - Since the using directive is defined with in the body of Main(), it is necessary to prefix cout and cin statements when using them in the convert function body.
+    ```C++
+    ....
+    void convert(int inches)
+{
+	int feet = 0;
+	int remainder =  0;
+	feet = inches / INCHES_PER_FEET;
+	remainder = inches % INCHES_PER_FEET;
+	std::cout << inches << " inches is " << feet << " feet, " << remainder;
+	std::cout << " inches" << std::endl;	
+	// Note: Need to use the 'std::' qualifier since the using directive is included
+	// in the main() section of the program and not outside.
+}	```
 
 **Chapter 4**
 - Exercises 4.9/4.10
