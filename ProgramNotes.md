@@ -22,6 +22,10 @@
 	  // in the main() section of the program and not outside.
     }
     ````
+- Exercise 3.5
+  The instructions for the example in the text reads that you should use a `long long` interger data type for the input variables.  Remember that C++ division arithmetic follows these rules:
+ - > When both operands are intergers, C++ performs integer division.  That means any fractional part of the answer is discarded, making the result an integer.
+ - > If one or both operands are floating-point values, the fractional part is kep, making the result floating-point.
 
 **Chapter 4**
 - Exercises 4.9/4.10
