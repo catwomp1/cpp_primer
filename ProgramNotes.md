@@ -6,7 +6,7 @@
 
 **Chapter 3**
 - Exercise 3.1
-  Since the using directive is defined with in the body of Main(), it is necessary to prefix cout and cin statements when using them in the convert function body.
+ - Since the using directive is defined with in the body of Main(), it is necessary to prefix cout and cin statements when using them in the convert function body.
    
     ```C++
     ....
@@ -23,7 +23,7 @@
     }
     ````
 - Exercise 3.5
-  The instructions for the example in the text reads that you should use a `long long` interger data type for the input variables.  Remember that C++ division arithmetic follows these rules:
+ - The instructions for the example in the text reads that you should use a `long long` interger data type for the input variables.  Remember that C++ division arithmetic follows these rules:
  - "When both operands are intergers, C++ performs integer division.  That means any fractional part of the answer is discarded, making the result an integer."
  - "If one or both operands are floating-point values, the fractional part is kep, making the result floating-point."
  - The practiable outcome of creating both input variables as an interger type, `long long` is that the division will only return the interger value, or the value that comes before a decimal point.  To simplify this excerise, you can define the input variables as a floating-point data type, such as `long double` or the like and the percision from divison operations will now be presevered.
