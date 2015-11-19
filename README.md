@@ -1,9 +1,9 @@
 ## Repository cpp_primer
 ###Code exercises amd chapter listings from C++ Primer Plus Sixth Edition###
 
-####Develop Environment####
+####Development Environment####
 These exercises where developed using:
-- Windows 10 Professional
+- x86 Windows 10 Professional
 - UEStudio '15 Development Environment (x64) Version 15.30.0.13
 - MinGW C++ compiler version gcc-4.8.1
 
