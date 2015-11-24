@@ -1,5 +1,5 @@
 ## Repository cpp_primer
-###Code exercises amd chapter listings from C++ Primer Plus Sixth Edition###
+###Code exercises and chapter listings from C++ Primer Plus Sixth Edition###
 
 ####Development Environment####
 These exercises where developed using:
