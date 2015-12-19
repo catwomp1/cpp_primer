@@ -61,9 +61,42 @@
      candybar * snacks = new candybar[ArSize] // Allocate a dynamic array of type candybar structures
      ....
      delete [] snacks;  // Don't forget to delete the array!
-     return 0; }
+     return 0; 
+    }
+     ````
      
-```
 **Chapter 5**
 
 **Chapter 6**
+
+**Chapter 7**
+- Exercise 7.2
+ - Take a look at the fill_array function below and note the `if (!cin)` statement that checks for bad input.  Since we declared temp as an integer primitive data type, `cin` knows that only the only valid values from input are positive whole numbers.  In this case, a negative number, decimal or any character input values will stop input before the array size limit is reached.
+ - If we do have bad input, we can use `cin` to clear the input using a while loop to read in all of the input until it comes to a newline.
+    ```C++
+    ....
+    int fill_array(int arr[], int limit)
+    {
+	using namespace std;
+	int temp, i;
+	
+	cout << "Keep track of your golf scores!" << endl;
+	  for (i = 0; i < limit; i++)
+	  {
+		cout << "Enter value #" << (i + 1) << ": ";
+		cin >> temp;
+		if (!cin)	// bad input
+		{
+			cin.clear();
+			while (cin.get() != '\n')
+				continue;
+			cout << "Bad input; input process terminated. \n";
+			break;
+		}
+		else if (temp < 0)	//signal to terminate
+			break;
+		arr[i] = temp;
+	  }
+      return i;
+    }
+    ````
