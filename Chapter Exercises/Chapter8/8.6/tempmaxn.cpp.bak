@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 	int i[6] = {2, 5, 6, 9, 1, 14};
 	double d[4] = {2.4, 5.6, 3.3, 9.8};
 	char * arr[] = {"Cat slap", "Rerun", "Short stop", 
-		                 "Super fast", "Longest string"};	
+										 "Super fast", "Longest string"};	
 										 
 	cout << "Maximum interger: " << maxn(i, 6) << endl;
 	cout << "Maximum double: " << maxn(d, 4) << endl;
